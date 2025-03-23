@@ -1,0 +1,17 @@
+model:
+  d_model: 256          # 减少模型维度
+  nhead: 4              # 减少注意力头数
+  num_layers: 4         # 减少层数
+  dim_feedforward: 1024 # 前馈网络维度
+  dropout: 0.1          # 添加dropout
+
+training:
+  batch_size: 64        # 减小批次大小
+  grad_accum_steps: 4   # 梯度累积步数
+  epochs: 50
+  learning_rate: 0.0001
+  max_seq_len: 256      # 减小序列长度
+
+data:
+  min_char_freq: 2
+  cache_dir: "./data_cache"
